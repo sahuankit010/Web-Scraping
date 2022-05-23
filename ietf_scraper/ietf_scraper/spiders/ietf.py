@@ -12,6 +12,7 @@ class IetfSpider(scrapy.Spider):
         #title = response.css('span.title::text').get()
         #using xpath
         title = response.xpath('//span[@class = "title"]/text()').get()
+        body = response.xpath('//div[@class = "content"]/text()').get()
         # print(title)
-        return {"title": title}
+        return {"body": body}
         pass
